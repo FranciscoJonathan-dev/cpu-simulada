@@ -99,15 +99,14 @@ class CPU:
         print(f"Próximo PC: {self.pc:02d}")
 
     def executar(self, max_ciclos=100, passo_a_passo=False):
-        """Executa até HALT. Com passo_a_passo=True, espera ENTER a cada ciclo."""
+       
         ciclos = 0
         while not self.halted:
             if passo_a_passo:
                 input("\n[ENTER] para executar o próximo ciclo...")
             if ciclos >= max_ciclos:
                 raise RuntimeError(
-                    "Número máximo de ciclos atingido. "
-                    "Verifique se existe um loop infinito."
+                    
                 )
             self.ciclo()
             ciclos += 1
